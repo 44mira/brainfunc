@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.1">
+    <meta name="project" content="bfi v0.1.0">
+
+
+    <title>Bfi — bfi v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-43PMFBC7.js"></script>
+    <script src="dist/sidebar_items-89DA7E22.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-L4O5OK2K.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
+bfi
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of bfi</span>
+              <input name="q" type="text" class="search-input" placeholder="Search Documentation (press /)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+  <span translate="no">Bfi</span> 
+  <small class="app-vsn" translate="no">(bfi v0.1.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Brainf*ck Interpreter in Elixir.</p><p>Wanted to try my hand at parsing a language. Imperatively, Brainf*ck is trivial to interpret,
+which is why I wanted to try it in a functional language like Elixir.</p><h2 id="module-examples" class="section-heading">
+  <a href="#module-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<p>Linux</p><pre><code class="makeup bash" translate="no"><span class="">  $&gt; ./bfi hello.txt
+</span><span class="">  Hello world!
+</span><span class="">  $&gt; ./bfi --eval --size=10 &quot;++++++[&gt;+++++++++&lt;-]&gt;.+++.&quot;
+</span><span class="">  69
+</span></code></pre><p>Windows</p><pre><code class="cmd">  $&gt; escript bfi hello.txt
+  Hello world!
+  $&gt; escript bfi --eval --size=10 &quot;++++++[&gt;+++++++++&lt;-]&gt;.+++.&quot;
+  69</code></pre>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#eval/2" translate="no">eval(list, state)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Evaluation function that comes after the parsing step.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#main/1" translate="no">main(args)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#memory/1" translate="no">memory(size)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates the initial state for <a href="#eval/2"><code class="inline">eval/2</code></a>, based on a given <code class="inline">size</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#parse/2" translate="no">parse(instruction, acc \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Parse characters into tokens and group loops.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="eval/2">
+
+  <div class="detail-header">
+    <a href="#eval/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">eval(list, state)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Evaluation function that comes after the parsing step.</p><p>Uses tail-recursion with the state as the accumulator.</p><h2 id="eval/2-state" class="section-heading">
+  <a href="#eval/2-state" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">State</span>
+</h2>
+<p>The state is a 3-tuple, composed of the data pointer <code class="inline">dp</code>, the memory <code class="inline">mem</code>, and the input queue <code class="inline">input</code>.</p><h2 id="eval/2-notes" class="section-heading">
+  <a href="#eval/2-notes" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Notes</span>
+</h2>
+<ul><li>Elixir raises an error when trying to <code class="inline">:print</code> ASCII values that are greater than 128.</li><li>Inputting more than one character after an evaluation on <code class="inline">:input</code> results in queueing the rest of the input for subsequent <code class="inline">:input</code> calls.</li><li>When evaluating <code class="inline">:next</code> and <code class="inline">:prev</code>, note that <code class="inline">dp</code> is bounded by 0 and the size of <code class="inline">mem</code>.</li><li>When evaluating <code class="inline">:increment</code> and <code class="inline">:decrement</code>, note that negative values underflow to 255, and numbers greater than 255 overflow back to 0.</li></ul><h2 id="eval/2-examples" class="section-heading">
+  <a href="#eval/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="8613792150-1">(</span><span class="s">&quot;++++++[&gt;++++++++&lt;-]&gt;.&gt;++++++++++.&quot;</span><span class="p" data-group-id="8613792150-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">eval</span><span class="p" data-group-id="8613792150-2">(</span><span class="nc">Bfi</span><span class="o">.</span><span class="n">memory</span><span class="p" data-group-id="8613792150-3">(</span><span class="mi">3</span><span class="p" data-group-id="8613792150-3">)</span><span class="p" data-group-id="8613792150-2">)</span><span class="w">
+</span><span class="mi">0</span><span class="w">
+</span><span class="p" data-group-id="8613792150-4">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8613792150-5">{</span><span class="ss">:array</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8613792150-6">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8613792150-6">}</span><span class="p" data-group-id="8613792150-5">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="8613792150-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="8613792150-7">(</span><span class="s">&quot;,.,.&gt;++++++++++.&quot;</span><span class="p" data-group-id="8613792150-7">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">eval</span><span class="p" data-group-id="8613792150-8">(</span><span class="nc">Bfi</span><span class="o">.</span><span class="n">memory</span><span class="p" data-group-id="8613792150-9">(</span><span class="mi">3</span><span class="p" data-group-id="8613792150-9">)</span><span class="p" data-group-id="8613792150-8">)</span><span class="w">
+</span><span class="mi">01</span><span class="w">
+</span><span class="mi">01</span><span class="w">
+</span><span class="p" data-group-id="8613792150-10">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8613792150-11">{</span><span class="ss">:array</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8613792150-12">{</span><span class="mi">49</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8613792150-12">}</span><span class="p" data-group-id="8613792150-11">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="8613792150-10">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="main/1">
+
+  <div class="detail-header">
+    <a href="#main/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">main(args)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="memory/1">
+
+  <div class="detail-header">
+    <a href="#memory/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">memory(size)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Creates the initial state for <a href="#eval/2"><code class="inline">eval/2</code></a>, based on a given <code class="inline">size</code></p><h2 id="memory/1-examples" class="section-heading">
+  <a href="#memory/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">memory</span><span class="p" data-group-id="0066834487-1">(</span><span class="mi">3</span><span class="p" data-group-id="0066834487-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="0066834487-2">(</span><span class="s">&quot;++++++[&gt;++++++++&lt;-]&gt;.&quot;</span><span class="p" data-group-id="0066834487-2">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">eval</span><span class="p" data-group-id="0066834487-3">(</span><span class="n">init</span><span class="p" data-group-id="0066834487-3">)</span><span class="w">
+</span><span class="p" data-group-id="0066834487-4">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0066834487-5">{</span><span class="ss">:array</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0066834487-6">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0066834487-6">}</span><span class="p" data-group-id="0066834487-5">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="0066834487-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="0066834487-7">(</span><span class="s">&quot;-[&gt;-[-]]&lt;&quot;</span><span class="p" data-group-id="0066834487-7">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">eval</span><span class="p" data-group-id="0066834487-8">(</span><span class="nc">Bfi</span><span class="o">.</span><span class="n">memory</span><span class="p" data-group-id="0066834487-9">(</span><span class="mi">5</span><span class="p" data-group-id="0066834487-9">)</span><span class="p" data-group-id="0066834487-8">)</span><span class="w">
+</span><span class="p" data-group-id="0066834487-10">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0066834487-11">{</span><span class="ss">:array</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0066834487-12">{</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0066834487-12">}</span><span class="p" data-group-id="0066834487-11">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="0066834487-10">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="parse/2">
+
+    <span id="parse/1"></span>
+
+  <div class="detail-header">
+    <a href="#parse/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">parse(instruction, acc \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Parse characters into tokens and group loops.</p><blockquote><p>Since Brainf*ck tokens are just characters, lexing can be condensed into this one function.</p></blockquote><table><thead><tr><th style="text-align: left;">Character</th><th style="text-align: left;">Meaning</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">+</code></td><td style="text-align: left;">Increments the current cell</td></tr><tr><td style="text-align: left;"><code class="inline">-</code></td><td style="text-align: left;">Decrements the current cell</td></tr><tr><td style="text-align: left;"><code class="inline">&gt;</code></td><td style="text-align: left;">Moves forward by one cell</td></tr><tr><td style="text-align: left;"><code class="inline">&lt;</code></td><td style="text-align: left;">Moves backward by one cell</td></tr><tr><td style="text-align: left;"><code class="inline">.</code></td><td style="text-align: left;">Outputs the current cell</td></tr><tr><td style="text-align: left;"><code class="inline">,</code></td><td style="text-align: left;">Takes an integer input</td></tr><tr><td style="text-align: left;"><code class="inline">[</code></td><td style="text-align: left;">When current cell is 0, jump to after matching <code class="inline">]</code></td></tr><tr><td style="text-align: left;"><code class="inline">]</code></td><td style="text-align: left;">Jump unconditionally to matching <code class="inline">[</code></td></tr><tr><td style="text-align: left;"><code class="inline">&lt;other&gt;</code></td><td style="text-align: left;">Read as a comment</td></tr></tbody></table><h2 id="parse/2-tokens" class="section-heading">
+  <a href="#parse/2-tokens" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Tokens</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="na">@env</span><span class="w"> </span><span class="p" data-group-id="7520587507-1">%{</span><span class="w">
+  </span><span class="sc">?+</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:increment</span><span class="p">,</span><span class="w">
+  </span><span class="sc">?-</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:decrement</span><span class="p">,</span><span class="w">
+  </span><span class="sc">?&gt;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:next</span><span class="p">,</span><span class="w">
+  </span><span class="sc">?&lt;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:prev</span><span class="p">,</span><span class="w">
+  </span><span class="sc">?.</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:print</span><span class="p">,</span><span class="w">
+  </span><span class="sc">?,</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">:input</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="7520587507-1">}</span></code></pre><p>Brackets are parsed as nested lists.</p><h2 id="parse/2-examples" class="section-heading">
+  <a href="#parse/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="1215744935-1">(</span><span class="s">&quot;++.a&quot;</span><span class="p" data-group-id="1215744935-1">)</span><span class="w">
+</span><span class="p" data-group-id="1215744935-2">[</span><span class="ss">:increment</span><span class="p">,</span><span class="w"> </span><span class="ss">:increment</span><span class="p">,</span><span class="w"> </span><span class="ss">:print</span><span class="p">,</span><span class="w"> </span><span class="ss">:comment</span><span class="p" data-group-id="1215744935-2">]</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="1215744935-3">(</span><span class="s">&quot;-&gt;&lt;&quot;</span><span class="p" data-group-id="1215744935-3">)</span><span class="w">
+</span><span class="p" data-group-id="1215744935-4">[</span><span class="ss">:decrement</span><span class="p">,</span><span class="w"> </span><span class="ss">:next</span><span class="p">,</span><span class="w"> </span><span class="ss">:prev</span><span class="p" data-group-id="1215744935-4">]</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bfi</span><span class="o">.</span><span class="n">parse</span><span class="p" data-group-id="1215744935-5">(</span><span class="s">&quot;-[--].&quot;</span><span class="p" data-group-id="1215744935-5">)</span><span class="w">
+</span><span class="p" data-group-id="1215744935-6">[</span><span class="ss">:decrement</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1215744935-7">[</span><span class="ss">:decrement</span><span class="p">,</span><span class="w"> </span><span class="ss">:decrement</span><span class="p" data-group-id="1215744935-7">]</span><span class="p">,</span><span class="w"> </span><span class="ss">:print</span><span class="p" data-group-id="1215744935-6">]</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="bfi.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.1) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
