@@ -1,21 +1,24 @@
-# Bfi
+Brainf\*ck Interpreter in Elixir.
 
-**TODO: Add description**
+Wanted to try my hand at parsing a language. Imperatively, Brainf\*ck is trivial to interpret,
+which is why I wanted to try it in a functional language like Elixir.
 
-## Installation
+## Examples
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `bfi` to your list of dependencies in `mix.exs`:
+Linux
 
-```elixir
-def deps do
-  [
-    {:bfi, "~> 0.1.0"}
-  ]
-end
+```bash
+  $> ./bfi hello.txt
+  Hello world!
+  $> ./bfi --eval --size=10 "++++++[>+++++++++<-]>.+++."
+  69
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/bfi>.
+Windows
 
+```cmd
+  $> escript bfi hello.txt
+  Hello world!
+  $> escript bfi --eval --size=10 "++++++[>+++++++++<-]>.+++."
+  69
+```
