@@ -7,7 +7,7 @@ which is why I wanted to try it in a functional language like Elixir.
 
 Linux
 
-```bash
+```
   $> ./bfi hello.txt
   Hello world!
   $> ./bfi --eval --size=10 "++++++[>+++++++++<-]>.+++."
@@ -16,7 +16,7 @@ Linux
 
 Windows
 
-```cmd
+```
   $> escript bfi hello.txt
   Hello world!
   $> escript bfi --eval --size=10 "++++++[>+++++++++<-]>.+++."
